@@ -1,0 +1,13 @@
+{
+  "name": "Just a Fingerprint Scanner ",
+  "keywords": "sensor",
+  "description": "Arduino examples for ADH-Tech's Fingerprint Scanners. ",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/justbarran/Just-a-Fingerprint-Scanner-GT-521FXX.git"
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "avr,esp,sam"
+}

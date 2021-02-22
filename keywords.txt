@@ -1,0 +1,17 @@
+GT_521F 	KEYWORD1
+open		KEYWORD2
+close		KEYWORD2
+begin 		KEYWORD2
+usbInternalCheck KEYWORD2
+changeBaudRate 	KEYWORD2
+cmosLed 	KEYWORD2
+isPressFinger 	KEYWORD2
+captureFinger 	KEYWORD2
+getEnrollCount 	KEYWORD2
+checkEnrolled 	KEYWORD2
+enrollStart 	KEYWORD2
+enrollFinger 	KEYWORD2
+deleteID 	KEYWORD2
+deleteAll 	KEYWORD2
+verify 		KEYWORD2
+identify 	KEYWORD2
