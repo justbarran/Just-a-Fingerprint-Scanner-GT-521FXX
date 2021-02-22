@@ -1,9 +1,10 @@
 # Just a Fingerprint Scanner GT-521FXX
+
 Arduino Serial Library for GT-521F32 and GT-521F52 Fingerprint module from sparkfun
+
 Please Support My Youtube Channel: "https://www.youtube.com/c/justbarran 
 
 
-====================================
 
 <table class="table table-hover table-striped table-bordered">
   <tr align="center">
