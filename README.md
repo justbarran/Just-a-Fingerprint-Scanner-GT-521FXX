@@ -49,4 +49,4 @@ The original library license is as follows:
 
 "	Created by Nicholas Hosein and Christian Barran, Feb 1st 2021
 	Licensed for non-commercial use, must include this license message
-	basically, Feel free to hack away at it, but just give me credit and subscribe to my youtube channel for more."
+	basically, Feel free to hack away at it, but just give us credit and subscribe to my youtube channel for more."
