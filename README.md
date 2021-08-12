@@ -2,7 +2,7 @@
 
 Arduino Serial Library for GT-521F32 and GT-521F52 Fingerprint module from sparkfun
 
-Please Support My Youtube Channel: https://www.youtube.com/c/justbarran 
+Please Support My Youtube Channel by subscribing : https://www.youtube.com/c/justbarran 
 
 ====================================
 
