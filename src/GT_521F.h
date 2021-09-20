@@ -15,6 +15,7 @@
 
 #include <Arduino.h>
 #include <HardwareSerial.h>
+#include <SoftwareSerial.h>
 
 #define DATA_BUFFER_SIZE 32
 
@@ -71,7 +72,12 @@ class GT_521F {
      *  @param  serial Hardware serial port object
     */
     GT_521F(HardwareSerial& serial);
-    
+
+    /** @brief  Instanciate GT_521F object
+    *  @param  serial Software serial port object
+    */
+    GT_521F(SoftwareSerial& serial); 
+
     /** @brief  Initialize serial communication
      *  @param  baud Serial baud rate. Default = 9600.
      *               Valid = 9600, 19200, 38400, 57600, 115200, 230400
@@ -265,7 +271,8 @@ class GT_521F {
 
     Stream* _s;
     HardwareSerial* _hwS;
-    
+    SoftwareSerial* _SwS;
+    uint8_t serialType = 0; // 0 = hardware, 1 = Software
     static const uint8_t DEVICE_ID_1 = 0x01;
     static const uint8_t DEVICE_ID_2 = 0x00;
     // Command

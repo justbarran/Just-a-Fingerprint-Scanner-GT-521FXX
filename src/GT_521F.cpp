@@ -12,52 +12,61 @@
 
 /********************************** PUBLIC ***********************************/
 
-GT_521F::GT_521F(HardwareSerial& serial) { _hwS = &serial; }
+GT_521F::GT_521F(HardwareSerial& serial) { _hwS = &serial; serialType = 0;}
 
+GT_521F::GT_521F(SoftwareSerial& serial) { _SwS = &serial; serialType = 1;}
 
 bool GT_521F::begin(uint32_t baud) {
-  _s = _hwS;
-  if(baud == 9600 || baud == 19200 || baud == 38400 ||
-      baud == 57600 || baud == 115200 || baud == 230400) {
-    // Auto-detect baud rate
-    uint8_t baudDelay = 10;
-    _hwS->begin(9600);
-    delay(baudDelay);
-    if(close() != 0) {
-      _hwS->flush();
-      _hwS->begin(19200);
+  if(serialType == 0)
+  {
+    _s = _hwS;
+    if(baud == 9600 || baud == 19200 || baud == 38400 ||
+        baud == 57600 || baud == 115200 || baud == 230400) {
+      // Auto-detect baud rate
+      uint8_t baudDelay = 10;
+      _hwS->begin(9600);
       delay(baudDelay);
       if(close() != 0) {
         _hwS->flush();
-        _hwS->begin(38400);
+        _hwS->begin(19200);
         delay(baudDelay);
         if(close() != 0) {
           _hwS->flush();
-          _hwS->begin(57600);
+          _hwS->begin(38400);
           delay(baudDelay);
           if(close() != 0) {
             _hwS->flush();
-            _hwS->begin(115200);
+            _hwS->begin(57600);
             delay(baudDelay);
             if(close() != 0) {
               _hwS->flush();
-              _hwS->begin(230400);
+              _hwS->begin(115200);
               delay(baudDelay);
               if(close() != 0) {
-                return false;
+                _hwS->flush();
+                _hwS->begin(230400);
+                delay(baudDelay);
+                if(close() != 0) {
+                  return false;
+                }
               }
             }
           }
         }
       }
-    }
-    if(changeBaudRate(baud) == 0) {
-      _hwS->flush();
-      _hwS->begin(baud);
-      return true;
-    }
-  } 
-
+      if(changeBaudRate(baud) == 0) {
+        _hwS->flush();
+        _hwS->begin(baud);
+        return true;
+      }
+    } 
+  }
+  else
+  {
+    _s = _SwS;
+    _SwS->begin(baud);
+    return true;
+  }
   return false;
 }
 
