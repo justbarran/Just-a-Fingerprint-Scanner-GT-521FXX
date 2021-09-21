@@ -21,8 +21,12 @@
 
 #include <GT_521F.h>
 
-GT_521F fps(Serial1); // Use any Hardware Serial object 
-                      // Will add Software Serial support later
+//Uncomment for Software Serial
+//SoftwareSerial mySerial (7, 6);
+//GT_521F fps(mySerial); 
+
+//Uncomment for Hardware Serial
+GT_521F fps(Serial1); 
 
 void setup()
 {
